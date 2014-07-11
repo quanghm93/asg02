@@ -16,17 +16,18 @@ package oop.asg02;
 		str=init;
 	}
  
-     
+     // tra ve kieu String cua BigInt
      public String toString() { 
          return str;
     }
      
+      // tra ve kieu Long cua BigInt
      public long toLong() {   
          return Long.parseLong(str);  
      }
  
      
-
+	// tra ve doi tuong BigInt la tong cua hai BigInt	
      public BigInteger add(BigInteger other) {   
 			String sum="";
 			int i=str.length(),j=other.str.length();
@@ -52,7 +53,7 @@ package oop.asg02;
 		 return s;
      }
  
-  
+  	// tra ve doi tuong BigInt la hieu cua hai BigInt
      public BigInteger subtract(BigInteger other) {
 		 String sub="";
 			int i=str.length(),j=other.str.length();
@@ -72,24 +73,10 @@ package oop.asg02;
 		 return s;
      }
      
-
+	// so danh gia tri cua hai so, tra ve keiu boolean
      public boolean equals(Object other) {
          return toString().equals(other.toString());
      }
  
-     
-	 public int compareTo(BigInteger other){
-		if(str.length()>other.str.length()) return 1;
-		else if(str.length()<other.str.length()) return -1;
-		else {
-			for(int i=0;i<str.length();i++){
-				int a=Integer.parseInt(str.substring(i,i+1));
-				int b=Integer.parseInt(other.str.substring(i,i+1));
-				if(a>b) return 1;
-				if(a<b) return -1;
-			}
-		}
-		return 0;
-	}
 
  }
