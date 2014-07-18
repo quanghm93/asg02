@@ -78,5 +78,23 @@ package oop.asg02;
          return toString().equals(other.toString());
      }
  
+       // cap nhat phan E, bo sung 2 ham: 
+       //  public int compareTo(BigInteger other) 
+       // va public BigInteger clone() 
+       
+       public int compareTo(BigInteger other)  
+	{
+		if (this.toLong() > other.toLong()) return 1;           // so sanh 2 so, tra ve 1 neu so hien tai lon hon other 
+		else
+		{
+			if (this.toLong() < other.toLong()) return -1;  // tra ve -1 neu so hien tai nho hon other
+			else return 0;					// con lai truong hop bang nhau, tra ve 0.
+		}
+	}
 
+
+	public BigInteger clone()			// tra ve tham chieu doi tuong BigInt moi tao, la ban sao cua doi tuong hien tai.
+	{
+		return new BigInteger(this.toString());
+	}
  }
